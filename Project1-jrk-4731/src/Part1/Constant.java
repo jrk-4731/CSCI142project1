@@ -17,7 +17,7 @@ public class Constant extends Function{
         return String.valueOf(this.value);
     }
 
-    public Function derivative(Function to_derive){
+    public Function derivative(){
         return new Constant(0);
     }
 

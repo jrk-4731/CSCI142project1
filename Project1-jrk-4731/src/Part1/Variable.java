@@ -20,7 +20,7 @@ public class Variable extends Function{
     }
 
     @Override
-    public Function derivative(Function to_derive){
+    public Function derivative(){
         return new Constant(1);
     }
 

@@ -14,9 +14,7 @@ public abstract class Function {
         return "";
     }
 
-    public Function derivative(Function to_derive){
-        return null;
-    }
+    public abstract Function derivative();
 
     public boolean isConstant(){
         return false;

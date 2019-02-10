@@ -19,18 +19,39 @@ public class Sum extends Function{
     @Override
     public String toString(){
         String function="( ";
+        double add_vars=0;
+        double add_consts=0;
         for (int i=0; i<this.terms.length; i++){
-            String str_term=this.terms[i].toString();
-            function+=str_term+" ";
+            Function term=this.terms[i];
+            if (term.isConstant()){
+                add_consts+=term.evaluate(0);
+            }
+            else{
+                add_vars+=1;
+            }
         }
-        return function+")";
+        if(add_consts==0 && add_vars==0){
+            return function+ "0 )";
+        }
+        else if(add_consts==0 && add_vars!=0){
+            return function+add_vars+"x )";
+        }
+        else if(add_consts!=0 && add_vars==0){
+            return function+add_consts+" )";
+        }
+        else{
+            return function+add_vars+"x + "+add_consts+" )";
+        }
     }
 
     @Override
-    public Function derivative(Function to_derive){
+    public Function derivative(){
+        if (this.terms.length==0){
+            return null;
+        }
         Function[] derivative_terms=new Function[this.terms.length];
         for (int i=0; i<this.terms.length; i++){
-            Function term_derivative=this.terms[i].derivative(to_derive);
+            Function term_derivative=this.terms[i].derivative();
             derivative_terms[i]=term_derivative;
         }
         return new Sum(derivative_terms);
@@ -38,6 +59,9 @@ public class Sum extends Function{
 
     @Override
     public boolean isConstant(){
+        if (this.terms.length==0){
+            return false;
+        }
         for (int i=0; i<this.terms.length; i++){
             if (!this.terms[i].isConstant()){
                 return false;

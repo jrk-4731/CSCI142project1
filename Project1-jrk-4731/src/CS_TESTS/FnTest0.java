@@ -39,7 +39,7 @@ public class FnTest0 {
 
 // OUTPUT
 /*
-Function ( 2.0x + 20.0 )
+Function ( x + x + 20.0 )
 Value at 0: 20.0
 Value at 10: 40.0
 Derivative: 2.0

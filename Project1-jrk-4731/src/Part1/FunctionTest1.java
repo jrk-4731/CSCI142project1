@@ -30,11 +30,11 @@ public class FunctionTest1 {
 
 //OUTPUT
 /**
- * Testing for ( 0 ) ...
+ * Testing for ( 0.0 ) ...
  * Testing isConstant: false
  * Testing derivative: null
- * Testing evaluate for 5: ( 0 )=0.0
- * Testing evaluate for -5: ( 0 )=0.0
+ * Testing evaluate for 5: ( 0.0 )=0.0
+ * Testing evaluate for -5: ( 0.0 )=0.0
  *
  * Testing for 5.0 ...
  * Testing isConstant: true
@@ -44,7 +44,7 @@ public class FunctionTest1 {
  *
  * Testing for ( 5.0 ) ...
  * Testing isConstant: true
- * Testing derivative: ( 0 )
+ * Testing derivative: ( 0.0 )
  * Testing evaluate for 5: ( 5.0 )=5.0
  * Testing evaluate for -5: ( 5.0 )=5.0
  *
@@ -54,28 +54,28 @@ public class FunctionTest1 {
  * Testing evaluate for 5: x=5.0
  * Testing evaluate for -5: x=-5.0
  *
- * Testing for ( 1.0x ) ...
+ * Testing for ( x ) ...
  * Testing isConstant: false
  * Testing derivative: ( 1.0 )
- * Testing evaluate for 5: ( 1.0x )=5.0
- * Testing evaluate for -5: ( 1.0x )=-5.0
+ * Testing evaluate for 5: ( x )=5.0
+ * Testing evaluate for -5: ( x )=-5.0
  *
  * Testing for ( 3.0 ) ...
  * Testing isConstant: true
- * Testing derivative: ( 0 )
+ * Testing derivative: ( 0.0 )
  * Testing evaluate for 5: ( 3.0 )=3.0
  * Testing evaluate for -5: ( 3.0 )=3.0
  *
- * Testing for ( 4.0x ) ...
+ * Testing for ( x + x + x + x ) ...
  * Testing isConstant: false
  * Testing derivative: ( 4.0 )
- * Testing evaluate for 5: ( 4.0x )=20.0
- * Testing evaluate for -5: ( 4.0x )=-20.0
+ * Testing evaluate for 5: ( x + x + x + x )=20.0
+ * Testing evaluate for -5: ( x + x + x + x )=-20.0
  *
- * Testing for ( 4.0x + 3.0 ) ...
+ * Testing for ( x + x + x + x + 3.0 ) ...
  * Testing isConstant: false
  * Testing derivative: ( 4.0 )
- * Testing evaluate for 5: ( 4.0x + 3.0 )=23.0
- * Testing evaluate for -5: ( 4.0x + 3.0 )=-17.0
+ * Testing evaluate for 5: ( x + x + x + x + 3.0 )=23.0
+ * Testing evaluate for -5: ( x + x + x + x + 3.0 )=-17.0
  *
  */

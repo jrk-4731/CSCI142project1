@@ -19,7 +19,6 @@ public class Sum extends Function{
     @Override
     public String toString(){
         String function="( ";
-        double add_vars=0;
         double add_consts=0;
         for (int i=0; i<this.terms.length; i++){
             Function term=this.terms[i];
@@ -27,20 +26,24 @@ public class Sum extends Function{
                 add_consts+=term.evaluate(0);
             }
             else{
-                add_vars+=1;
+                if (i!=this.terms.length-1) {
+                    String str_term = this.terms[i].toString();
+                    function += str_term + " + ";
+                }
+                else{
+                    String str_term = this.terms[i].toString();
+                    function += str_term;
+                }
             }
         }
-        if(add_consts==0 && add_vars==0){
-            return function+ "0 )";
+        if(add_consts==0 && function.equals("( ")) {
+            return function + "0.0 )";
         }
-        else if(add_consts==0 && add_vars!=0){
-            return function+add_vars+"x )";
-        }
-        else if(add_consts!=0 && add_vars==0){
-            return function+add_consts+" )";
+        else if(add_consts==0 && !function.equals("( ")){
+            return function +" )";
         }
         else{
-            return function+add_vars+"x + "+add_consts+" )";
+            return function+add_consts+" )";
         }
     }
 

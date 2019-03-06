@@ -1,6 +1,4 @@
-package CS_TESTS;
-
-import Part1.*;
+import functions.*;
 //import Part2.*
 
 /**
@@ -31,7 +29,7 @@ public class FnTest0 {
         System.out.println( "Value at 10: " + f.evaluate( 10.0 ) );
         System.out.println( "Derivative: " + f.derivative() );
         double iResult = 0.0;
-        //iResult = f.integral( 0.0, 10.0, 1000000 );
+        iResult = f.integral( 0.0, 10.0, 1000000 );
         System.out.println( "Integral from 0 to 10: " + iResult );
     }
 
@@ -43,5 +41,5 @@ Function ( x + x + 20.0 )
 Value at 0: 20.0
 Value at 10: 40.0
 Derivative: 2.0
-Integral from 0 to 10: 300.0 (NOT IN OUTPUT NOW!)
+Integral from 0 to 10: 300.0
 */
